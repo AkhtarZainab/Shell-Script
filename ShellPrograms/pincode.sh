@@ -1,12 +1,14 @@
 #!/bin/bash -x
+shopt -s extglob
 
-pat="^([0-9]*[a-zA-Z]){3,}[0-9]*$"
+pat="^[1-9]{1}[0-9]{2} {0,1}[0-9]{3}$"
 
-any="aaa1"
+read -p "enter pin" pin
 
-if [[ $any =~ $pat ]]
+if [[ $pin =~ $pat ]]
 then
 	echo yes
 else
 	echo no
 fi
+
